@@ -171,10 +171,14 @@ router.post("/login",[
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
        }
-    const {email,password}=req.body;
+    const {email,password,verified}=req.body;
     try{
       let user= await User.findOne({email})
       let success=false;
+      if(!verified){
+        success=false;
+        return res.status(400).send({error:"Please complete your verification"})
+      }
       if(!user){
         success=false;
         return res.status(400).send({error:"Please login with valid credentials"})
@@ -197,6 +201,21 @@ router.post("/login",[
       res.status(500).send("Internal server error")
     }
 })
+
+
+// // ROUTE : 3 fetch user details by POST: /api/auth/getuser
+
+router.post("/getuser",fetchuser,async(req, res) => {
+  try{
+      const userId=req.user.id;
+      const user=await User.findById(userId).select("-password");
+      res.send(user);
+  }
+  catch(error){
+    res.status(500).send("Internal server error")
+  }
+  })
+     
 
 
  module.exports=router
