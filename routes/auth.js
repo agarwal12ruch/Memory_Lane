@@ -21,12 +21,10 @@ var transporter = nodemailer.createTransport({
       pass: process.env.USER_PASSWORD
   }
 });
-
-
 // ROUTE 1: create a user using postman : no login required 
 // "/api/auth/newuser"
 router.post("/newuser",[
-    body("name","enetr a valid name").isLength({min:3}),
+    body("name","enter a valid name").isLength({min:3}),
     body("email","enter a valid email").isEmail(),
     body('password',"Password must be of 5 charactors").isLength({ min: 3 }),
 ],async(req, res) => {
