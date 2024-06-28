@@ -62,7 +62,7 @@ router.post("/newuser",[
           id:user.id
         }
       }
-      const authtoken=jwt.sign(data, JWT_SECRET);
+      const authtoken=jwt.sign(data, JWT_SECRET); 
      success=true;
 
       // requesting the user for otp verification 
@@ -171,14 +171,12 @@ router.post("/login",[
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
        }
-    const {email,password,verified}=req.body;
+    const {email,password}=req.body;
     try{
       let user= await User.findOne({email})
       let success=false;
-      if(!verified){
-        success=false;
-        return res.status(400).send({error:"Please complete your verification"})
-      }
+      
+      
       if(!user){
         success=false;
         return res.status(400).send({error:"Please login with valid credentials"})
@@ -188,6 +186,11 @@ router.post("/login",[
         success=false;
         return res.json({success,error:"Please login with valid credentials"})
       }
+      if (!user.verified) {
+        return res.status(400).json({ success, error: "Please complete your verification" });
+      }
+
+
       const data={
         user:{
           id:user.id
