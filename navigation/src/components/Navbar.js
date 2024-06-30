@@ -8,6 +8,7 @@ import toggle_light from '../../src/components/assets/night.png'
 import toggle_dark from '../../src/components/assets/day.png'
 import hamburger_light from '../../src/components/assets/hamburger_light.png'
 import hamburger_dark from '../../src/components/assets/hamburger_dark.png'
+import {Link} from "react-router-dom"
 const Navbar = ({theme,setTheme}) => {
   const toggle_mode=()=>{
     theme==='light'? setTheme('dark'):setTheme('light');
@@ -19,10 +20,10 @@ const Navbar = ({theme,setTheme}) => {
       <div className='for_justify'>
       <div className={showMediaIcons ? "menu_link menu_link_mobile":"menu_link"}>
         <ul >
-          <li><a href='/'>Home</a></li>
-          <li><a href='/About'>About Us</a></li>
-          <li><a href='/SignIn'>Create Memory</a></li>
-          <li><a href='/LogIn'>LogIn</a></li>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/About'>About Us</Link></li>
+          <li><Link to='/SignIn'>SignIn</Link></li>
+          <li><Link to='/LogIn'>LogIn</Link></li>
         </ul>
       </div>
       <div className='search-box'>
