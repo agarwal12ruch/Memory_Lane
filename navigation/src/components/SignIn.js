@@ -16,7 +16,7 @@ const SignIn = ({theme,settheme}) => {
     <div className='Login'>
       <div className="wrapper">
             <form action="">
-                <h1>SignIn</h1>
+                <h1>Sign in</h1>
                 <div className="input-box">
                     <input type="text" placeholder="Username" required />
                     <img src={theme==='light'? user_dark:user_light} alt=''></img>

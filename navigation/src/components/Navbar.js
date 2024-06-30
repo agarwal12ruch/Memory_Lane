@@ -22,8 +22,8 @@ const Navbar = ({theme,setTheme}) => {
         <ul >
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/About'>About Us</Link></li>
-          <li><Link to='/SignIn'>SignIn</Link></li>
-          <li><Link to='/LogIn'>LogIn</Link></li>
+          <li><Link to='/SignIn'>Sign in</Link></li>
+          <li><Link to='/LogIn'>Login</Link></li>
         </ul>
       </div>
       <div className='search-box'>
