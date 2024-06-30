@@ -19,10 +19,10 @@ const App = () => {
         <Navbar theme={theme} setTheme={setTheme}/>
       </div>
       <Routes>
-        <Route path='/' element={<Home />}>Home</Route>
-        <Route path='/' element={<About />}></Route>
-        <Route path='/' element={<SignIn />}></Route>
-        <Route path='/' element={<Login />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/About' element={<About />}></Route>
+        <Route path='/SignIn' element={<SignIn />}></Route>
+        <Route path='/LogIn' element={<Login />}></Route>
       </Routes>
       <div className={` ${theme}`}>
         <Goto theme={theme} setTheme={setTheme}/>

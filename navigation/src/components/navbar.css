@@ -8,7 +8,7 @@
     height: 100px;
     transition: .5sec;
     box-shadow: 0 4px 8px 0 rgba(105, 98, 239, 0.7), 0 6px 20px 0 rgba(105,98,239,.19);
-    position: fixed;
+    /* position: fixed; */
 }
 .for_justify{
     display: flex;

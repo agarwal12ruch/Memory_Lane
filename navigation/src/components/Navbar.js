@@ -19,10 +19,10 @@ const Navbar = ({theme,setTheme}) => {
       <div className='for_justify'>
       <div className={showMediaIcons ? "menu_link menu_link_mobile":"menu_link"}>
         <ul >
-          <li><a href='https://www.google.co.in'>Home</a></li>
-          <li><a href='https://www.google.co.in'>About Us</a></li>
-          <li><a href='https://www.google.co.in'>Sign-In</a></li>
-          <li><a href='https://www.google.co.in'>LogIn</a></li>
+          <li><a href='/'>Home</a></li>
+          <li><a href='/AboutUs'>About Us</a></li>
+          <li><a href='/SignIn'>Sign-In</a></li>
+          <li><a href='/LogIn'>LogIn</a></li>
         </ul>
       </div>
       <div className='search-box'>
