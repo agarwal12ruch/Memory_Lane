@@ -6,6 +6,7 @@ import Login from './components/Login';
 import About from './components/About';
 import Home from './components/Home';
 import Goto from './components/Goto';
+import OTP from './components/OTP';
 import{
   BrowserRouter as Router,
   Routes,
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/About' element={<About theme={theme} setTheme={setTheme}/>}/>
         <Route path='/SignIn' element={<SignIn theme={theme} setTheme={setTheme}/>}/>
         <Route path='/LogIn' element={<Login theme={theme} setTheme={setTheme}/>}/>
+        <Route path='/OTP' element={<OTP theme={theme} setTheme={setTheme}/>}/>
       </Routes>
       </div>
       <div className={` ${theme}`}>

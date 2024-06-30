@@ -85,6 +85,7 @@ ul li a{
 @media (max-width: 1070px){
     .menu_link ul {
         display: none;
+        z-index: 999;
     }
     .search-box{
         margin-left: 20px;

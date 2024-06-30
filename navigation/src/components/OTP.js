@@ -8,32 +8,34 @@ import google_dark from '../../src/components/assets/google_dark.png'
 import google_light from '../../src/components/assets/google_light.png'
 import lock_light from '../../src/components/assets/lock_light.png'
 import lock_dark from '../../src/components/assets/lock_dark.png'
-import OTP_light from '../../src/components/assets/OTP_light.png'
-import OTP_dark from '../../src/components/assets/OTP_dark.png'
 import {Link} from 'react-router-dom'
-const Login = ({theme,settheme}) => {
+const OTP = ({theme,settheme}) => {
   return (
     <div className='Login'>
       <div className="wrapper">
             <form action="">
-                <h1>Login</h1>
+                <h1>OTP Verification</h1>
                 <div className="input-box">
-                    <input type="text" placeholder="Username" required />
+                    <input type="text" placeholder="Phone Number / Email" required />
                     <img src={theme==='light'? user_dark:user_light} alt=''></img>
                 </div>
                 <div className="input-box">
-                    <input type="password" placeholder="Password" required />
+                    <input type="otp" placeholder="Enter OTP" required />
                     <img src={theme==='light'? lock_dark:lock_light} alt=''></img>
                 </div>
                 <div className="remember-forget">
                     <label>
                         <input type="checkbox" />Remember me
                     </label>
-                    <Link to="Reset.html">Forgot Password</Link>
                 </div>
-                <button type="submit" className="btn" id="redirectButton">LOGIN</button>
+                <button type="submit" className="btn" id="redirectButton">VERIFY</button>
                 <div className="register-link">
                     <p>Don't have an account? <Link to="/SignIn">Register</Link></p>
+                </div>
+                <div className='OTP'>
+                  <Link to='/LogIn'>
+                    <span>LogIn Via User Name and Password</span>
+                  </Link>
                 </div>
                 <h3>OR</h3>
                 <div className="media-option">
@@ -52,4 +54,4 @@ const Login = ({theme,settheme}) => {
   )
 }
 
-export default Login
+export default OTP
