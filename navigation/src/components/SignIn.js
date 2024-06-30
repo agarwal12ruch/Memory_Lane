@@ -33,7 +33,7 @@ const SignIn = ({theme,settheme}) => {
                     <label>
                         <input type="checkbox" />Remember me
                     </label>
-                    <Link to="/OTP">LogIn Via OTP</Link>
+                    <Link to="/OTP">Verify Via OTP</Link>
                 </div>
                 <button type="submit" className="btn" id="redirectButton">CREATE ACCOUNT</button>
                 <div className="register-link">

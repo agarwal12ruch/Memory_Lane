@@ -8,8 +8,6 @@ import google_dark from '../../src/components/assets/google_dark.png'
 import google_light from '../../src/components/assets/google_light.png'
 import lock_light from '../../src/components/assets/lock_light.png'
 import lock_dark from '../../src/components/assets/lock_dark.png'
-import OTP_light from '../../src/components/assets/OTP_light.png'
-import OTP_dark from '../../src/components/assets/OTP_dark.png'
 import {Link} from 'react-router-dom'
 const Login = ({theme,settheme}) => {
   return (
