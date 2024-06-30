@@ -6,7 +6,12 @@ import Login from './components/Login';
 import About from './components/About';
 import Home from './components/Home';
 import Goto from './components/Goto';
-import {BrowserRouter ,Routes,Route} from "react-router-dom"
+import OTP from './components/OTP';
+import{
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 const App = () => {
   const current_theme=localStorage.getItem('current_theme');
   const [theme,setTheme]=useState(current_theme?current_theme:'light');
@@ -14,23 +19,26 @@ const App = () => {
     localStorage.setItem('current_theme',theme);
   },[theme])
   return (
-    <BrowserRouter>
+    <Router>
       <div className={`container ${theme}`}>
         <Navbar theme={theme} setTheme={setTheme}/>
       </div>
+      <div  className={`routing ${theme}`}>
       <Routes>
-        <Route path='/' element={<Home />}>Home</Route>
-        <Route path='/' element={<About />}></Route>
-        <Route path='/' element={<SignIn />}></Route>
-        <Route path='/' element={<Login />}></Route>
+        <Route path='/' element={<Home theme={theme} setTheme={setTheme}/>}/> 
+        <Route path='/About' element={<About theme={theme} setTheme={setTheme}/>}/>
+        <Route path='/SignIn' element={<SignIn theme={theme} setTheme={setTheme}/>}/>
+        <Route path='/LogIn' element={<Login theme={theme} setTheme={setTheme}/>}/>
+        <Route path='/OTP' element={<OTP theme={theme} setTheme={setTheme}/>}/>
       </Routes>
+      </div>
       <div className={` ${theme}`}>
         <Goto theme={theme} setTheme={setTheme}/>
       </div>
-      <div className={`Goto ${theme}`}>
+      <div className={`${theme}`}>
         <Footer theme={theme} setTheme={setTheme}/>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 };
 export default App;

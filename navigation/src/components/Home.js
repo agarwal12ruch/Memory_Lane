@@ -1,9 +1,9 @@
 import React from 'react'
-
-const Home = () => {
+import './home.css'
+const Home = ({theme,setTheme}) => {
   return (
-    <div>
-      
+    <div className='Home'>
+      <h1>Home</h1>
     </div>
   )
 }

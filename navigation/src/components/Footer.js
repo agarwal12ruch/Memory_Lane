@@ -18,6 +18,7 @@ import call_light from '../../src/components/assets/call_light.png'
 import email_dark from '../../src/components/assets/email_dark.png'
 import email_light from '../../src/components/assets/email_light.png'
 import './footer.css';
+import {Link} from "react-router-dom"
 const Footer = ({theme,setTheme}) => {
     return (
         <div className='footer'>
@@ -42,49 +43,49 @@ const Footer = ({theme,setTheme}) => {
                 </div>
                 <div className='sb_footer_link_div'>
                     <h4>Products</h4>
-                    <a href='http'>
+                    <Link to='http'>
                         <p>For Individual</p>
-                    </a>
-                    <a href='http'>
+                    </Link>
+                    <Link to='http'>
                         <p>Family Plan</p>
-                    </a>
-                    <a href='http'>
+                    </Link>
+                    <Link to='http'>
                         <p>VR Conversion</p>
-                    </a>
+                    </Link>
                 </div>
                 <div className='sb_footer_link_div'>
                     <h4>Company</h4>
-                    <a href='http'>
+                    <Link to='/About'>
                         <p>About</p>
-                    </a>
-                    <a href='http'>
+                    </Link>
+                    <Link to='http'>
                         <p>Contact</p>
-                    </a>
-                    <a href='http'>
+                    </Link>
+                    <Link to='http'>
                         <p>Career</p>
-                    </a>
-                    <a href='http'>
+                    </Link>
+                    <Link to='http'>
                         <p>Explore</p>
-                    </a>
+                    </Link>
                 </div>
                 <div className='sb_footer_link_div'>
                     <h4>Social Media</h4>
                     <div className='socialmedia'>
-                        <a href='facebook'>
+                        <Link to='facebook'>
                         <img src={theme==='light'? facebook_dark:facebook_light }alt='' className='logo' />
-                        </a>
-                        <a href='insta'>
+                        </Link>
+                        <Link to='insta'>
                         <img src={theme==='light'? Instagram_dark:Instagram_light }alt='' className='logo' />
-                        </a>
-                        <a href='linkedin'>
+                        </Link>
+                        <Link to='linkedin'>
                         <img src={theme==='light'? Linkedin_dark:Linkedin_light} alt='' className='logo' />
-                        </a>
-                        <a href='telegram'>
+                        </Link>
+                        <Link to='telegram'>
                         <img src={theme==='light'? Telegram_dark:Telegram_light} alt='' className='logo' />
-                        </a>
-                        <a href='Youtube'>
+                        </Link>
+                        <Link to='Youtube'>
                         <img src={theme==='light'?Youtube_dark:Youtube_light} alt='' className='logo' />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -96,10 +97,10 @@ const Footer = ({theme,setTheme}) => {
                     </p>
                 </div>
                 <div className='sb_footer_below_links'>
-                    <a href='"/terms'><div><p>Terms & Condition</p></div></a>
-                    <a href='/privacy'><div><p>Privacy</p></div></a>
-                    <a href='/Security'><div><p>Security</p></div></a>
-                    <a href='/cookies'><div><p>Cookie </p></div></a>
+                    <Link to='"/terms'><div><p>Terms & Condition</p></div></Link>
+                    <Link to='/privacy'><div><p>Privacy</p></div></Link>
+                    <Link to='/Security'><div><p>Security</p></div></Link>
+                    <Link to='/cookies'><div><p>Cookie </p></div></Link>
                 </div>  
             </div>
         </div>

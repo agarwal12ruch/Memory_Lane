@@ -6,16 +6,15 @@
 }
 .container {
   width: 100%;
-  min-height: 100vh;
   background: #ced8ff;
   transition: .5sec;
 }
 .goto{
   background: #ced8ff;
 }
-.container.dark {
-  background: #222;
+.routing{
+  padding: 5px 5px;
 }
-.dark .goto{
-  background-color: #222;
+.routing.dark{
+  background-color: #14213d;
 }
