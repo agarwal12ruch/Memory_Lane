@@ -9,7 +9,7 @@ app.use(express.json())
 
 // server connected
 app.use("/api/auth",require("./routes/auth"))
-// app.use("/api/notes",require("./routes/notes"))
+app.use("/api/notes",require("./routes/notes"))
 app.listen(port,()=>{
     console.log("server connected")
 })
