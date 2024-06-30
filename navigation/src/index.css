@@ -12,9 +12,10 @@
 .goto{
   background: #ced8ff;
 }
-.container.dark {
-  background: #222;
+.routing{
+  min-height: 100vh;
+  padding: 5px 5px;
 }
-.dark .goto{
-  background-color: #222;
+.routing.dark{
+  background-color: #14213d;
 }

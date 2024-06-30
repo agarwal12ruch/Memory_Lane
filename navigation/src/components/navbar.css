@@ -63,7 +63,7 @@ ul li a{
     cursor: pointer;
 }
 .dark .navbar{
-    background: #000;
+    background-color: #000;
     color: #fff;
     box-shadow: 0 4px 8px 0 rgba(141, 139, 139, 0.7), 0 6px 20px 0 rgba(141, 139, 139,.19);
 }
@@ -146,7 +146,7 @@ ul li a{
         width: 150px;
     }
     .menu_link_mobile ul{
-        top: 60px;
-        width: 170px;
+        top: 70px;
+        width: 200px;
     }
 }
