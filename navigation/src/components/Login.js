@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './login.css'
 import user_light from '../../src/components/assets/user_light.png'
 import user_dark from '../../src/components/assets/user_dark.png'
@@ -8,19 +8,48 @@ import google_dark from '../../src/components/assets/google_dark.png'
 import google_light from '../../src/components/assets/google_light.png'
 import lock_light from '../../src/components/assets/lock_light.png'
 import lock_dark from '../../src/components/assets/lock_dark.png'
-import {Link} from 'react-router-dom'
-const Login = ({theme,settheme}) => {
+import {Link, useNavigate} from 'react-router-dom'
+const Login = ({theme,settheme,applyalert}) => {
+    const [cred,setCred]=useState({email:"",password:""})
+    const navigate=useNavigate();
+    const handlesubmit=async(e)=>{
+        e.preventDefault();
+        const response= await fetch("http://localhost:5000/api/auth/login",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+            },
+            body:JSON.stringify({email:cred.email,password:cred.password})
+        });
+        const data=await response.json();
+        console.log(data)
+        if(data.success){
+            localStorage.setItem("token",data.authtoken);
+        navigate("/About")
+        console.log(data.authtoken)
+        applyalert("Logged in","success");
+        }
+        else{
+            applyalert("Invalid credentials","danger");
+        }
+        
+
+    }
+    const onChange=(e)=>{
+       setCred( {...cred,[e.target.name]:e.target.value})
+    }
+
   return (
     <div className='Login'>
       <div className="wrapper">
-            <form action="">
+            <form onSubmit={handlesubmit}>
                 <h1>Login</h1>
                 <div className="input-box">
-                    <input type="text" placeholder="Username" required />
+                    <input type="text" placeholder="Username" id="email" name='email' value={cred.email} onChange={onChange}  />
                     <img src={theme==='light'? user_dark:user_light} alt=''></img>
                 </div>
                 <div className="input-box">
-                    <input type="password" placeholder="Password" required />
+                    <input type="password" placeholder="Password" id="password" name='password' value={cred.password} onChange={onChange}  />
                     <img src={theme==='light'? lock_dark:lock_light} alt=''></img>
                 </div>
                 <div className="remember-forget">
