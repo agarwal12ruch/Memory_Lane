@@ -13,7 +13,7 @@ import email_dark from '../../src/components/assets/email_dark.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
-const SignIn = ({ theme, settheme,props }) => {
+const SignIn = ({ theme, settheme,applyalert }) => {
     const [cred, setCred] = useState({ name: "", email: "", password: "" })
     const navigate=useNavigate();
     const handlesubmit = async(e) => {
@@ -28,9 +28,16 @@ const SignIn = ({ theme, settheme,props }) => {
         });
         const json= await response.json();
         console.log(json);
-        localStorage.setItem("token",json.authtoken)
-        navigate('/About');
-        console.log(json.authtoken);
+        if(json.success){
+            localStorage.setItem("token",json.authtoken)
+            navigate('/About');
+            console.log(json.authtoken);
+            applyalert("Signed in","success")
+        }
+        else{
+            applyalert("Invalid credentials","danger");
+        }
+        
         
     }
     const onChange = (e) => {
