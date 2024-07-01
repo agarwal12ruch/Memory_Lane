@@ -66,7 +66,7 @@ router.post("/newuser",[
       // requesting the user for otp verification 
      await sendotp({ _id: user._id, email: user.email }, res);
 
-      res.json({success,"auth-token":authtoken})
+      res.json({success,userId:user._id,"auth-token":authtoken})
       //res.send(req.body);
     }
     catch(err){
@@ -158,7 +158,7 @@ router.post("/verifyotp",async(req,res)=>{
     }
 })
 
-/// login---
+/// Route 3- login---
 
 router.post("/login",[
   body("email","enter a valid email").isEmail(),  // check user throgh email and password
