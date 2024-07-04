@@ -42,4 +42,4 @@ const Navbar = ({theme,setTheme}) => {
   );
 };
 
-export default Navbar
+export default Navbar;
