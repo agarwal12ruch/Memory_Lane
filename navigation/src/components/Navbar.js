@@ -15,13 +15,13 @@ const Navbar = ({theme,setTheme}) => {
   }
   const[showMediaIcons,setShowMediaIcons]=useState(false);
   return (
-    <div className='navbar'>
-      <img src={theme==='light'? logo_light:logo_dark} alt='' className='logo' />
+    <div className='nav'>
+      <Link to='/'><img src={theme==='light'? logo_light:logo_dark} alt='' className='logo' /></Link>
       <div className='for_justify'>
       <div className={showMediaIcons ? "menu_link menu_link_mobile":"menu_link"}>
         <ul >
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='/About'>About Us</Link></li>
+          <li><Link to='/Createmem'>Create Memory</Link></li>
           <li><Link to='/SignIn'>SignIn</Link></li>
           <li><Link to='/LogIn'>LogIn</Link></li>
         </ul>

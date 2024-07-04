@@ -56,7 +56,7 @@ const Footer = ({theme,setTheme}) => {
                 <div className='sb_footer_link_div'>
                     <h4>Company</h4>
                     <Link to='/About'>
-                        <p>About</p>
+                        <p>About Us</p>
                     </Link>
                     <Link to='http'>
                         <p>Contact</p>

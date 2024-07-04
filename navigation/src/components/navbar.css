@@ -1,4 +1,4 @@
-.navbar{
+.nav{
     width: 100%;
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@ ul li a{
     width: 20px;
     cursor: pointer;
 }
-.dark .navbar{
+.dark .nav{
     background-color: #000;
     color: #fff;
     box-shadow: 0 4px 8px 0 rgba(141, 139, 139, 0.7), 0 6px 20px 0 rgba(141, 139, 139,.19);
@@ -94,7 +94,7 @@ ul li a{
     .search-box input{
         max-width: 170px;
     }
-    .navbar{
+    .nav{
         height: 85px;
     }
     .toggle-icons{
@@ -114,8 +114,6 @@ ul li a{
         position: absolute;
         top: 85px;
         right: 0px;
-        width: 250px;
-        height: 30vh;
         background-color: #fff;
         box-shadow: 0 4px 8px 0 rgba(105, 98, 239, 0.7);
         border-bottom-left-radius: 10px;
@@ -129,7 +127,7 @@ ul li a{
     }
 }
 @media (max-width:700px){
-    .navbar{
+    .nav{
         height: 70px;
     }
     .logo{

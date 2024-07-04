@@ -1,9 +1,6 @@
 .Home{
-    min-height: 100vh;
+    min-height: 87vh;
 }
 .dark h1{
     color: rgb(255, 255, 255);
 }
-/* .dark .Home{
-    background-color: #14213d;
-} */

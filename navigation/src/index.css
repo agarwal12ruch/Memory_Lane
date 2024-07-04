@@ -4,7 +4,7 @@
   box-sizing:border-box;
   font-family: sans-serif;
 }
-.container {
+.contain {
   width: 100%;
   background: #ced8ff;
   transition: .5sec;
