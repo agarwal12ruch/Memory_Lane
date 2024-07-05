@@ -8,7 +8,6 @@
     height: 100px;
     transition: .5sec;
     box-shadow: 0 4px 8px 0 rgba(105, 98, 239, 0.7), 0 6px 20px 0 rgba(105,98,239,.19);
-    /* position: fixed; */
 }
 .for_justify{
     display: flex;
@@ -23,16 +22,17 @@ ul{
     flex: 1;
     list-style: none;
     text-align: right;
+    margin-top: 15px;
     padding-right: 30px;
 }
 ul li{
     display: inline-block;
-    margin: 10px 20px;
+    margin: 0px 20px;
     font-size: 18px;
 }
 ul li a{
+    color: #000000;
     text-decoration: none;
-    color: #000;
 }
 .toggle-icons{
     width: 50px;
@@ -45,6 +45,7 @@ ul li a{
     background:#000000 ;
     padding: 10px 20px;
     border-radius: 50px;
+    height: 45px;
 }
 .search-box input{
     padding: 3px;
@@ -82,17 +83,29 @@ ul li a{
 .hamburger-menu img{
     display: none;
 }
-@media (max-width: 1070px){
+@media(max-width:1200px){
+    .search-box input{
+        max-width: 160px;
+    }
+    ul li{
+        display: inline-block;
+        margin: 10px 11px;
+    }
+    .search-box{
+        height: 45px;
+    }
+}
+@media (max-width: 1020px){
     .menu_link ul {
         display: none;
         z-index: 999;
     }
     .search-box{
         margin-left: 20px;
-        height: 40px;
+        height: 45px;
     }
     .search-box input{
-        max-width: 170px;
+        max-width: 160px;
     }
     .nav{
         height: 85px;
@@ -112,7 +125,7 @@ ul li a{
         align-items: flex-start;
         justify-content: flex-start;
         position: absolute;
-        top: 85px;
+        top: 70px;
         right: 0px;
         background-color: #fff;
         box-shadow: 0 4px 8px 0 rgba(105, 98, 239, 0.7);
@@ -145,7 +158,15 @@ ul li a{
         width: 150px;
     }
     .menu_link_mobile ul{
-        top: 70px;
-        width: 200px;
+        top: 53px;
+        width: 230px;
+    }
+    .search-box{
+        height: 40px;
+    }
+}
+@media(max-width:600px){
+    .search-box input{
+        width: 120px;
     }
 }

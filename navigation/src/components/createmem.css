@@ -1,4 +1,4 @@
-.container{
+.container-form{
     width: 80vh;
     margin-top: 10px;
     padding-top: 15px;
@@ -24,8 +24,9 @@ h2{
 }
 .mb-3 input::placeholder{
     color: #8e8b8b;
+    font-size: 16px;
 }
-.btn{
+.btn-form{
     background-color: #fff;
     color: black;
     font-weight: 600;
@@ -35,4 +36,19 @@ h2{
 label{
     color: #ffffff;
     font-weight: 500;
+}
+.dark .container{
+    background-color:#224184;
+}
+@media(max-width:600px){
+    .container-form{
+        width: 61vh;
+        font-size: 15px;
+    }
+    .description input{
+        width: 200px;
+    }
+    .mb-3 input::placeholder{
+        font-size: 14px;
+    }
 }
