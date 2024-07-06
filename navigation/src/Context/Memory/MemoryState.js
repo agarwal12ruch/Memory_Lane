@@ -49,6 +49,18 @@ const MemoryState = (props) => {
             "title":"My First Memory",
             "tag":"Daman trip",
             "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456984s5d4s2e3f9",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456974s5d4s2e3f10",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
         }
     ]
     const [memories,setmemory]=useState(memoryInitial)
