@@ -9,7 +9,7 @@ const Carditem = (props) => {
         <div className="card my-3 ">
             <img src={Logo} className="card-img-top" alt="..." />
             <div className="card-body">
-                <h5 className="card-title title">{card.title}</h5>
+                <h5 className="card-title card-text">{card.title} ({card.tag})</h5>
                 <p className="card-text">{card.description}</p>
                 <div className='edit-btn'>
                   <Link to="#" className="btn btn-primary">Delete</Link>

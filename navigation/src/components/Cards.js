@@ -65,7 +65,7 @@ const Cards = ({theme}) => {
         </div>
       </div>
       <div className='row my-3 '>
-        <h1>This is memory</h1>
+        <h2>Saved Memories</h2>
         {memories.map((card) => {
           return <Carditem theme={theme} key={card.key} updateCard={updateCard} card={card} />;
         })}

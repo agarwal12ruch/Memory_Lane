@@ -11,7 +11,9 @@
     display: flex;
     justify-content: start;
 }
-
+.card-text{
+    color: #fff;
+}
 .dark .card{
     background-color: #1D267D;
 }
