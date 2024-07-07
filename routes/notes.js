@@ -11,9 +11,9 @@ body("tag","enter a valid title").isLength({min:3})
     if(!errors.isEmpty()){
           return res.status(400).json({errors:errors.array()});
     }
-    const {title,description,tag}=req.body;
+    const {title,description,tag,file}=req.body;
     const Newnote =  await new Note({
-        title,description,tag,user:req.user.id
+        title,description,tag,user:req.user.id,file
       });
       await Newnote.save();
       res.json(Newnote)
@@ -22,11 +22,12 @@ body("tag","enter a valid title").isLength({min:3})
 })
 
 router.put("/UPDATENOTE/:id",fetchuser,async(req,res)=>{
-  const{title,description,tag}=req.body;
+  const{title,description,tag,file}=req.body;
   const updatenote={};
   if(title){updatenote.title=title}
   if(description){updatenote.description=description}
   if(tag){updatenote.tag=tag}
+  if(file){updatenote.file=file}
   try {
     let userid=await Note.findById(req.params.id);
     if(!userid){

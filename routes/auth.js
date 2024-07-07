@@ -66,7 +66,7 @@ router.post("/newuser",[
       // requesting the user for otp verification 
      await sendotp({ _id: user._id, email: user.email }, res);
 
-      res.json({success,userId:user._id,"auth-token":authtoken})
+      res.json({success,userId:user._id,token:authtoken})
       //res.send(req.body);
     }
     catch(err){
@@ -196,7 +196,7 @@ router.post("/login",[
       }
       const authtoken=jwt.sign(data, JWT_SECRET);
       success=true;
-      res.json({success,"auth-token":authtoken})
+      res.json({success,token:authtoken})
       }
     catch(error){
       res.status(500).send("Internal server error")
