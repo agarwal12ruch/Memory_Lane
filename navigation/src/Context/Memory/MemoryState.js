@@ -1,9 +1,74 @@
 import React, { useState } from 'react'
 import MemoryContext from './MemoryContext'
 const MemoryState = (props) => {
+<<<<<<< HEAD
     const host="http://localhost:5000";
     const memoryInitial=[];
     
+=======
+    const memoryInitial=[
+        {
+            "key":"123456984s5d4s2e3f1",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"12456984s5d4s2e3f2",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"12345684s5d4s2e3f3",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456984s5d4s2e3f4",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+        "key":"123456984s5d4s2e3f5",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456984s5d4s2e3f6",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456984s5d4s2e3f7",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456974s5d4s2e3f8",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456984s5d4s2e3f9",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        },
+        {
+            "key":"123456974s5d4s2e3f10",
+            "title":"My First Memory",
+            "tag":"Daman trip",
+            "description":"Was an awesome trip with friends"
+        }
+    ]
+>>>>>>> 1a748c7a3fecb51b176d5b41bc34d524c358bdce
     const [memories,setmemory]=useState(memoryInitial)
     const getallNote=async()=>{
         const token=localStorage.getItem("token");

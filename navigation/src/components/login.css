@@ -9,10 +9,10 @@
 .wrapper{
    width: 420px;
    height: 520px;
-   background-color:#224184;
+   background-color:#8787e3;
    border: 2px solid rgb(255, 255, 255 ,.2);
    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-   color: #ffffff;
+   color: #000000;
    border-radius: 10px;
    padding: 25px 40px;
 }
@@ -77,7 +77,7 @@
    margin-right: 3px;
 }
 .remember-forget a{
-   color: #fff;
+   color: #000000;
    text-decoration: none;
 }
 .remember-forget a:hover{
@@ -109,7 +109,7 @@
    text-decoration: underline;
 }
 span{
-   color: rgb(255, 255, 255);
+   color: rgb(0, 21, 255);
    text-align: center;
 }
 .OTP img{

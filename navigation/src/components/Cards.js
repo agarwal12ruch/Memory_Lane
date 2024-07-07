@@ -6,7 +6,8 @@ import app from "../firebase"
 import{getDownloadURL, getStorage,ref, uploadBytes}from "firebase/storage"
 import { useNavigate } from 'react-router-dom';
 
-const Cards = () => {
+const Cards = ({theme}) => {
+    
   const context = useContext(MemoryContext);
   const Navigate=useNavigate();
   const { memories,getallNote,updateNote } = context;
@@ -75,19 +76,19 @@ const Cards = () => {
             </div>
             <div className="modal-body">
               <form>
-                <div className="mb-3">
-                  <label htmlFor="etitle" className="form-label">Title for Memory</label>
-                  <input type="text" className="form-control" onChange={onChange} value={memory.etitle} id="etitle" name="etitle" placeholder="Your Memories are safe with us." />
-                </div>
-                <div className='description'>
-                  <div className="mb-3">
-                    <label htmlFor="edescription" className="form-label">Description</label>
-                    <input type="text" className="form-control" onChange={onChange} value={memory.edescription} id="edescription" name="edescription" placeholder="Describe your Memory" />
-                  </div>
+                <div className='description-modal description'>
+                    <div className="mb-3">
+                    <label htmlFor="etitle" className="form-label">Title for Memory</label>
+                    <input type="text" className="form-control" onChange={onChange} value={memory.etitle} id="etitle" name="etitle" placeholder="Your Memories are safe with us." />
+                    </div>
                   <div className="mb-3">
                     <label htmlFor="etag" className="form-label">Tags</label>
                     <input type="text" className="form-control" onChange={onChange} value={memory.etag} id="etag" name="etag" placeholder="Provide suitable tag" />
                   </div>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="edescription" className="form-label">Description</label>
+                    <input type="text" className="form-control" onChange={onChange} value={memory.edescription} id="edescription" name="edescription" placeholder="Describe your Memory" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="formFileMultiple" className="form-label">Select Files</label>
@@ -102,10 +103,14 @@ const Cards = () => {
           </div>
         </div>
       </div>
-      <div className='row my-3'>
-        <h1>This is memory</h1>
+      <div className='row my-3 '>
+        <h2>Saved Memories</h2>
         {memories.map((card) => {
+<<<<<<< HEAD
           return <Carditem key={card.key} updateCard={updateCard} card={card} file={card.file}/>;
+=======
+          return <Carditem theme={theme} key={card.key} updateCard={updateCard} card={card} />;
+>>>>>>> 1a748c7a3fecb51b176d5b41bc34d524c358bdce
         })}
       </div>
     </div>

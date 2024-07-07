@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import "./createmem.css"
 import Cards from './Cards';
+<<<<<<< HEAD
 import app from '../firebase';
 import MemoryContext from '../Context/Memory/MemoryContext';
 import{getDownloadURL, getStorage,ref, uploadBytes}from "firebase/storage"
@@ -35,11 +36,16 @@ const Createmem = ({theme,settheme}) => {
         setuploading(true);
 
     }
+=======
+
+const Createmem = (theme,setTheme) => {
+>>>>>>> 1a748c7a3fecb51b176d5b41bc34d524c358bdce
   return (
     <div>
         <div className='container container-form'>
         <h2>Fill the Details</h2>
         <form>
+<<<<<<< HEAD
             <div className="mb-3">
                 <label htmlFor="title" className="form-label">Title for Memory</label>
                 <input type="text" className="form-control" id="title" name="title" onChange={handleChange} value={note.title} placeholder='Your Memories are safe with us .'/>
@@ -48,11 +54,22 @@ const Createmem = ({theme,settheme}) => {
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label">Description </label>
                     <input type="text" className="form-control" value={note.description} onChange={handleChange}id="description" name="description" placeholder='Describe your Memory'/>
+=======
+            
+            <div className='description'>
+                <div className="mb-3">
+                    <label htmlFor="title" className="form-label">Title for Memory</label>
+                    <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Your Memories are safe.'/>
+>>>>>>> 1a748c7a3fecb51b176d5b41bc34d524c358bdce
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tags" className="form-label">Tags </label>
                     <input type="text" className="form-control" id="tag" value={note.tag} name="tag" onChange={handleChange} placeholder='Provide suitable tag'/>
                 </div>
+            </div>
+            <div className="mb-3">
+                <label htmlFor="description" className="form-label">Description </label>
+                <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Describe your Memory'/>
             </div>
             <div className="mb-3">
                 <label htmlFor="formFileMultiple" className="form-label">Select Files </label>
@@ -61,7 +78,7 @@ const Createmem = ({theme,settheme}) => {
             <button   type="submit" onClick={onclick}className="btn btn-primary btn-form">Submit</button>
         </form>
         </div>
-        <Cards/>
+        <Cards theme={theme} setTheme={setTheme}/>
     </div>
   )
 }
