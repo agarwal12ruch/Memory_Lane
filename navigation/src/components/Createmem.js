@@ -37,6 +37,17 @@ const Createmem = ({ theme, setTheme }) => {
             setUploading(false);
         }
     };
+    const onclick = (e) => {
+        e.preventDefault();
+        if (!note.title || !note.description || !note.tag) {
+            alert("Please fill in all the fields before submitting.");
+            return;
+        }
+        
+        addNote(note.title, note.description, note.tag, note.file);
+        setNote({ title: "", description: "", tag: "", file: "" });
+        console.log(note);
+    };
 
     return (
         <div >
@@ -53,6 +64,8 @@ const Createmem = ({ theme, setTheme }) => {
                         onChange={handleChange}
                         value={note.title}
                         placeholder='Your Memories are safe with us.'
+                        minLength={3}
+                        
                     />
                 </div>
                 <div className="mb-3">
@@ -65,6 +78,8 @@ const Createmem = ({ theme, setTheme }) => {
                         onChange={handleChange}
                         value={note.description}
                         placeholder='Describe your Memory'
+                        minLength={3}
+                       
                     />
                 </div>
                 <div className="mb-3">
@@ -77,6 +92,7 @@ const Createmem = ({ theme, setTheme }) => {
                         onChange={handleChange}
                         value={note.tag}
                         placeholder='Provide suitable tag'
+                        minLength={3}
                     />
                 </div>
                 <div className="mb-3">
@@ -88,7 +104,7 @@ const Createmem = ({ theme, setTheme }) => {
                         id="formFileMultiple"
                     />
                 </div>
-                <button type="submit" onClick={onClick} className="btn btn-primary btn-form">Submit</button>
+                <button type="submit" onClick={onclick} className="btn btn-primary btn-form">Submit</button>
             </form>
             
         </div>

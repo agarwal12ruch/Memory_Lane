@@ -8,20 +8,16 @@ import toggle_light from '../../src/components/assets/night.png';
 import toggle_dark from '../../src/components/assets/day.png';
 import hamburger_light from '../../src/components/assets/hamburger_light.png';
 import hamburger_dark from '../../src/components/assets/hamburger_dark.png';
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+
 const Navbar = ({ theme, setTheme }) => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+const history=useNavigate();
   const menuRef = useRef(null);
-  const Navigate=useNavigate();
   const toggle_mode = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
-  const Logout=()=>{
-
-    localStorage.removeItem("token");
-    Navigate("/login")
-  }
+  
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setShowMediaIcons(false);
@@ -33,6 +29,12 @@ const Navbar = ({ theme, setTheme }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  const Logout=()=>{
+    localStorage.removeItem("token")
+    // setAvail(false);
+    history("/login")
+
+  }
 
   return (
     <div className='nav'>
@@ -42,13 +44,12 @@ const Navbar = ({ theme, setTheme }) => {
           <ul>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/Createmem'>Create Memory</Link></li>
-            <li><Link to='/SignIn'>SignIn</Link></li>
-            <li><Link to='/LogIn'>LogIn</Link></li>
+            {(!localStorage.getItem("token"))?<><li><Link to='/SignIn'>SignIn</Link></li>
+            <li><Link to='/Login'>Login</Link></li></>:<Link to='/Login' style={{fontSize:"19px"}} onClick={Logout}>Logout</Link>}
           </ul>
         </div>
         <div className='search-box'>
-          {/* <input type='text' placeholder='Search' /> */}
-          <button onClick={Logout}>LOGOUT</button>
+          <input type='text' placeholder='Search' />
           <img src={theme === 'light' ? search_icon_light : search_icon_dark} alt='' />
         </div>
         <div>

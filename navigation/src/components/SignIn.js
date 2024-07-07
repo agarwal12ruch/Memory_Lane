@@ -15,6 +15,7 @@ import { useState } from 'react'
 
 const SignIn = ({ theme, settheme,applyalert }) => {
     const [cred, setCred] = useState({ name: "", email: "", password: "" })
+    const [error,setError]=useState(false);
     const navigate=useNavigate();
     const handlesubmit = async(e) => {
         e.preventDefault();
@@ -36,7 +37,10 @@ const SignIn = ({ theme, settheme,applyalert }) => {
             // applyalert("Verify via otp","success")
         }
         else{
-            // applyalert("Invalid credentials","danger");
+            setError(true);
+            setTimeout(() => {
+                setError(false);
+            }, 2000);
         }
         
         
@@ -67,6 +71,7 @@ const SignIn = ({ theme, settheme,applyalert }) => {
                         </label>
                         <Link to="/OTP">Verify Via OTP</Link>
                     </div>
+                    {error && <p>User already exists login to continue</p>}
                     <button type="submit" className="btn" id="redirectButton">CREATE ACCOUNT</button>
                     <div className="register-link">
                         <p>Already have an account ?<Link to="/LogIn"> LogIn</Link></p>

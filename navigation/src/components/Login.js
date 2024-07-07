@@ -11,6 +11,7 @@ import lock_dark from '../../src/components/assets/lock_dark.png'
 import {Link, useNavigate} from 'react-router-dom'
 const Login = ({theme,settheme,applyalert}) => {
     const [cred,setCred]=useState({email:"",password:""})
+    const [error,setError]=useState(false);
     const navigate=useNavigate();
     const handlesubmit=async(e)=>{
         e.preventDefault();
@@ -27,11 +28,13 @@ const Login = ({theme,settheme,applyalert}) => {
             localStorage.setItem("token",data.token);
         navigate("/Createmem")
         console.log(data.token)
-        //  applyalert("Logged in","success");
-        // alert("got the token")
+        
         }
         else{
-            //  applyalert("Invalid credentials","danger");
+            setError(true);
+            setTimeout(() => {
+                setError(false);
+            }, 2000);
         }
         
 
@@ -45,6 +48,7 @@ const Login = ({theme,settheme,applyalert}) => {
       <div className="wrapper">
             <form onSubmit={handlesubmit}>
                 <h1>Login</h1>
+             
                 <div className="input-box">
                     <input type="text" placeholder="Username" id="email" name='email' value={cred.email} onChange={onChange}  />
                     <img src={theme==='light'? user_dark:user_light} alt=''></img>
@@ -59,6 +63,7 @@ const Login = ({theme,settheme,applyalert}) => {
                     </label>
                     <Link to="Reset.html">Forgot Password</Link>
                 </div>
+                {error && <p className="error-message">Invalid credentials !!</p>}
                 <button type="submit" className="btn" id="redirectButton">LOGIN</button>
                 <div className="register-link">
                     <p>Don't have an account? <Link to="/SignIn">Register</Link></p>
