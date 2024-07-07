@@ -106,11 +106,10 @@ const Cards = ({theme}) => {
       <div className='row my-3 '>
         <h2>Saved Memories</h2>
         {memories.map((card) => {
-<<<<<<< HEAD
+
           return <Carditem key={card.key} updateCard={updateCard} card={card} file={card.file}/>;
-=======
-          return <Carditem theme={theme} key={card.key} updateCard={updateCard} card={card} />;
->>>>>>> 1a748c7a3fecb51b176d5b41bc34d524c358bdce
+
+          
         })}
       </div>
     </div>
