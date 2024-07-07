@@ -29,10 +29,10 @@ const SignIn = ({ theme, settheme,applyalert }) => {
         const json= await response.json();
         console.log(json);
         if(json.success){
-        localStorage.setItem("token",json.authtoken)
+        localStorage.setItem("token",json.token)
         localStorage.setItem("userId",json.userId)
            navigate("/OTP");
-            console.log(json.authtoken);
+            console.log(json.token);
             applyalert("Verify via otp","success")
         }
         else{

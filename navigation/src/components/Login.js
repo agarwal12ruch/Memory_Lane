@@ -24,13 +24,14 @@ const Login = ({theme,settheme,applyalert}) => {
         const data=await response.json();
         console.log(data)
         if(data.success){
-            localStorage.setItem("token",data.authtoken);
-        navigate("/About")
-        console.log(data.authtoken)
-        applyalert("Logged in","success");
+            localStorage.setItem("token",data.token);
+        navigate("/Createmem")
+        console.log(data.token)
+        //  applyalert("Logged in","success");
+        // alert("got the token")
         }
         else{
-            applyalert("Invalid credentials","danger");
+            //  applyalert("Invalid credentials","danger");
         }
         
 
