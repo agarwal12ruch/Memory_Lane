@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const Cards = ({theme}) => {
     
   const context = useContext(MemoryContext);
+  const[uploading,setUploading]=useState(false);
   const Navigate=useNavigate();
   const { memories,getallNote,updateNote } = context;
   const [memory, setMemory] = useState({ etitle: "", edescription: "", etag: "" ,efile:""});
@@ -53,9 +54,11 @@ const Cards = ({theme}) => {
     console.log(file)
     if(file){
       const storage=getStorage(app);
+      setUploading(true);
       const storageRef=ref(storage,"files/"+file.name)
       await uploadBytes(storageRef,file);
       const downloadurl=await getDownloadURL(storageRef);
+      setUploading(false);
       console.log(downloadurl)
       setMemory(prevnote=>({
         ...prevnote,efile:downloadurl
@@ -98,7 +101,7 @@ const Cards = ({theme}) => {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button onClick={handleClick} type="button" className="btn btn-primary">Update memories</button>
+              <button disabled={uploading} onClick={handleClick} type="button" className="btn btn-primary">{uploading?"Wait":"Update memories"}</button>
             </div>
           </div>
         </div>

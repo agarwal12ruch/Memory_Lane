@@ -14,12 +14,7 @@ const Createmem = ({ theme, setTheme }) => {
         setNote({ ...note, [event.target.name]: event.target.value });
     };
 
-    const onClick = (e) => {
-        e.preventDefault();
-        addNote(note.title, note.description, note.tag, note.file);
-        setNote({ title: "", description: "", tag: "", file: "" });
-        console.log(note);
-    };
+   
 
     const newChange = async (e) => {
         const file = e.target.files[0];
@@ -30,6 +25,7 @@ const Createmem = ({ theme, setTheme }) => {
             const storageRef = ref(storage, "files/" + file.name);
             await uploadBytes(storageRef, file);
             const downloadUrl = await getDownloadURL(storageRef);
+            setUploading(false);
             console.log(downloadUrl);
             setNote(prevNote => ({
                 ...prevNote, file: downloadUrl
@@ -104,7 +100,7 @@ const Createmem = ({ theme, setTheme }) => {
                         id="formFileMultiple"
                     />
                 </div>
-                <button type="submit" onClick={onclick} className="btn btn-primary btn-form">Submit</button>
+                <button  disabled={uploading} type="submit" onClick={onclick} className="btn btn-primary btn-form">{uploading?"Wait":"Submit"}</button>
             </form>
             
         </div>
