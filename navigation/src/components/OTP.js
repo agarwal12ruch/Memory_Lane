@@ -25,9 +25,9 @@ const OTP = ({ theme, settheme, applyalert }) => {
         if (response.ok) {
             navigate("/Createmem");
             localStorage.removeItem('userId');
-            applyalert("OTP verified successfully", "success");
+            // applyalert("OTP verified successfully", "success");
         } else {
-            applyalert("Invalid OTP", "danger");
+            // applyalert("Invalid OTP", "danger");
         }
     };
 

@@ -9,13 +9,19 @@ import toggle_dark from '../../src/components/assets/day.png';
 import hamburger_light from '../../src/components/assets/hamburger_light.png';
 import hamburger_dark from '../../src/components/assets/hamburger_dark.png';
 import { Link } from "react-router-dom";
-
+import { useNavigate } from 'react-router-dom';
 const Navbar = ({ theme, setTheme }) => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   const menuRef = useRef(null);
+  const Navigate=useNavigate();
   const toggle_mode = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
+  const Logout=()=>{
+
+    localStorage.removeItem("token");
+    Navigate("/login")
+  }
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setShowMediaIcons(false);
@@ -41,7 +47,8 @@ const Navbar = ({ theme, setTheme }) => {
           </ul>
         </div>
         <div className='search-box'>
-          <input type='text' placeholder='Search' />
+          {/* <input type='text' placeholder='Search' /> */}
+          <button onClick={Logout}>LOGOUT</button>
           <img src={theme === 'light' ? search_icon_light : search_icon_dark} alt='' />
         </div>
         <div>

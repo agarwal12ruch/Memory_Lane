@@ -39,7 +39,7 @@ const Createmem = ({ theme, setTheme }) => {
     };
 
     return (
-        <div className='container'>
+        <div >
             <div className='container container-form'>
             <h2>Fill the Details</h2>
             <form>
